@@ -1,9 +1,9 @@
-import aws_cdk as cdk
-import aws_cdk.aws_s3 as s3
-            
-class HelloCdkStack(cdk.Stack):
+from aws_cdk import core
+from aws_cdk import aws_s3 as s3
 
-    def __init__(self, scope: cdk.App, construct_id: str, **kwargs) -> None:
-        super().__init__(scope, construct_id, **kwargs)
+class HelloCdkStack(core.Stack):
+
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
 
         bucket = s3.Bucket(self, "wzchrbuckettestcdk", versioned=True)
