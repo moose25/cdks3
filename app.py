@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-#!/usr/bin/env python3
-import aws_cdk as core
+from constructs import Construct
+from aws_cdk import App, Stack
 
 from cdk_app.cdk_app_stack import HelloCdkStack
 
-app = core.App()
+app = App()
 HelloCdkStack(app, "CdkTestAppCICDContainer")
 app.synth()
-
