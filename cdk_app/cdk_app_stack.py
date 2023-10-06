@@ -7,10 +7,4 @@ class HelloCdkStack(Stack):
     def __init__(self, scope: Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        # Define the environment with AWS account ID and region
-        env = {
-            "account": "your-aws-account-id",
-            "region": "your-aws-region",
-        }
-
         bucket = s3.Bucket(self, "wzchrbuckettestcdk", versioned=True, removal_policy=cdk.RemovalPolicy.DESTROY, auto_delete_objects=True, env=env)
